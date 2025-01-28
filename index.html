@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Brasília - BAND CE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hora" id="hora"></div>
+        <div class="logo">BAND CE</div>
+    </div>
+
+    <script>
+        function atualizarHora() {
+            const agora = new Date();
+            const opcoes = { timeZone: 'America/Sao_Paulo', hour12: false };
+            const hora = agora.toLocaleTimeString('pt-BR', opcoes);
+            document.getElementById('hora').textContent = hora;
+        }
+
+        setInterval(atualizarHora, 1000);
+        atualizarHora(); // Chama a função uma vez para mostrar a hora imediatamente
+    </script>
+</body>
+</html>
